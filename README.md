@@ -20,5 +20,5 @@ Some models can take a lot of time and resources to train, especially when there
 * Model:
   * model source
 * Informative:
- * https://medium.com/@sourenh94/tweets-sentiment-analysis-using-deep-transfer-learning-6cab7009986f
- * https://machinelearningmastery.com/transfer-learning-for-deep-learning/
+  * https://medium.com/@sourenh94/tweets-sentiment-analysis-using-deep-transfer-learning-6cab7009986f
+  * https://machinelearningmastery.com/transfer-learning-for-deep-learning/
