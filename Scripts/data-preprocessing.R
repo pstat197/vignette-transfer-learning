@@ -36,28 +36,30 @@ reddit.test.labels.encoded <- testing(partition.reddit) %>%
 twitter.data <- read.csv("Data/Twitter_Data.csv")
 twitter.data <- twitter.data[complete.cases(twitter.data),]
 
-# encode data so that each column represents 1 if it that column's label
-# 1 in the neutral column indicates neutral sentiment etc
-twitter.data.encoded <- twitter.data %>% 
-  mutate("Negative" = ifelse(category == -1, 1, 0),
-         "Neutral" = ifelse(category == 0, 1, 0),
-         "Positive" = ifelse(category == 1, 1, 0)) %>%
+
+# trying to remove all neutrals
+twitter.data <- twitter.data[twitter.data$category != 0, ]
+
+# set negative sentiment to 0 and positive to 1
+twitter.data <- twitter.data %>%
+  mutate(sentiment = ifelse(category == -1, 0, 1)) %>%
   select(-category)
 
-# train test split
 set.seed(1111)
-
-partition.twitter <- twitter.data.encoded %>%
+partition.twitter <- twitter.data %>%
   initial_split(prop = 0.8)
 
 twitter.train.text <- training(partition.twitter) %>%
   pull(clean_text)
 
-twitter.train.labels.encoded <- training(partition.twitter) %>%
+twitter.train.labels <- training(partition.twitter) %>%
   select(-clean_text)
 
 twitter.test.text <- testing(partition.twitter) %>%
   pull(clean_text)
 
-twitter.test.labels.encoded <- testing(partition.twitter) %>%
+twitter.test.labels <- testing(partition.twitter) %>%
   select(-clean_text)
+
+
+
