@@ -1,0 +1,19 @@
+---
+title: "Transfer Learning Report"
+author: "Bernie Graves, Kabir Snell, Ao Xu, Yuqing Xia"
+format: html
+editor: visual
+execute:
+  message: false
+  warning: false
+  echo: false
+  cache: true
+---
+
+## Abstract
+
+Some models can take a lot of time and resources to train, especially when there the amount of data gets large. Transfer learning lets you use pre-trained models on related but different tasks, saving time and resources while still using quality models. We used a pretrained model from rns senGoogle called the Universal Sentence Encoder. This essentially turns sentences into vectors. We loaded the model and made it not trainable. Then we add a few more layers to the model with the required output for our dataset.
+
+## Dataset
+
+## Data Preprocessing
