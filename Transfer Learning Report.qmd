@@ -29,6 +29,14 @@ For the pre-processing, we split the sentimental label into three columns: "posi
 
 ## Pre-Trained Universal Sentence Embedder
 
+Introduction of Pre-Trained Model:
+
+A pre-trained model is, to put it simply, a model developed by someone else to address a comparable issue. Instead of beginning from scratch to address a comparable problem, start with the model that has already been trained on one.
+
+Suppose you wanted to develop a self-learning automobile. The inception model (a pre-trained model) from Google was created on ImageNet data to recognize images in those photographs, or you can spend years creating a respectable image recognition algorithm from scratch.
+
+Even if a pre-trained model isn't quite accurate for your application, it saves a lot of time and energy compared to having to start from scratch.
+
 ## Model Development
 
 ```{r}
