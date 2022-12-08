@@ -27,4 +27,10 @@ Reddit.csv Dataset has around 37K Comments along with its Sentimental Label
 
 For the preprocessing, we split the sentimental label into three columns: "positive", "negative", and "neutral". The column has 1 if the original column indicates the sentiment and 0 otherwise, for example, if the original sentiment column has value -1, then for the new sentiment columns, "negative" has value 1, "neutral" and "positive" columns both has 0. Then we split the data sets into test and training sets for model development.
 
-## Pre-Trained Universal Sentence Embedder   
+## Pre-Trained Universal Sentence Embedder
+
+A pre-trained model is, to put it simply, a model developed by someone else to address a comparable issue. Instead of beginning from scratch to address a comparable problem, start with the model that has already been trained on one.
+
+Suppose you wanted to develop a self-learning automobile. The inception model (a pre-trained model) from Google was created on ImageNet data to recognize images in those photographs, or you can spend years creating a respectable image recognition algorithm from scratch.
+
+Even if a pre-trained model isn't quite accurate for your application, it saves a lot of time and energy compared to having to start from scratch.
