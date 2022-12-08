@@ -9,11 +9,11 @@ Vignette on transfer learning using *model name* pretrained model from *model so
 * Ao Xu
 
 ### Abstract
-Some models can take a lot of time and resources to train, especially when there the amount of data gets large. Transfer learning lets you use pre-trained models on related but different tasks, saving time and resources while still using quality models. We used a pretrained model from rns senGoogle called the Universal Sentence Encoder. This essentially turns sentences into vectors. We loaded the model and made it not trainable. Then we add a few more layers to the model with the required output for our dataset.
+Deep learning models can take a lot of time and resources to train, especially when there the amount of data gets large. Transfer learning lets you use pre-trained models on related but different tasks, saving time and resources while still using quality models. We used a pretrained model from Google called the Universal Sentence Encoder which essentially turns sentences into vectors. First you load the pretrained model and set the already trained layers to not be trainable. Then you make this pretrained model a layer in your deep learning model and train on your new data. Transfer learning has applications beyond sentiment analysis. It can be used with any pretrained deep learning model that you have access to. 
 
 ### Repository Contents
 * Data
-  * Our data set contains sentiment analysis observations from both twitter and reddit.
+  * Our data set contains sentiment analysis observations twitter.
 * Scripts
   * The scripts folder contains much of the technical portion of this vignette including data processing, model application etc.
 * Writeup
@@ -29,4 +29,5 @@ Some models can take a lot of time and resources to train, especially when there
   * https://medium.com/@sourenh94/tweets-sentiment-analysis-using-deep-transfer-learning-6cab7009986f
     * This article explains the process of using transfer learning models and applying them for sentiment analysis on twitter posts.
   * https://machinelearningmastery.com/transfer-learning-for-deep-learning/
+  * https://www.v7labs.com/blog/transfer-learning-guide#:~:text=Transfer%20learning%20models%20achieve%20optimal,training%20neural%20networks%20from%20scratch.
     * This article provides a high level explanation of transfer learning and some deep learning models.
