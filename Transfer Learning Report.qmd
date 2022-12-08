@@ -12,20 +12,20 @@ execute:
 
 ## Abstract
 
-Deep learning models can take a lot of time and resources to train, especially when there the amount of data gets large. Transfer learning lets you use pre-trained models on related but different tasks, saving time and resources while still using quality models. We used a pretrained model from Google called the Universal Sentence Encoder which essentially turns sentences into vectors. First you load the pre trained model and set the already trained layers to not be trainable. Then you make this pre trained model a layer in your deep learning model and train on your new data. Transfer learning has applications beyond sentiment analysis. It can be used with any pretrained deep learning model that you have access to.
+Deep learning models can take a lot of time and resources to train, especially when there the amount of data gets large. Transfer learning lets you use pre-trained models on related but different tasks, saving time and resources while still using quality models. We used a pre-trained model from Google called the Universal Sentence Encoder which essentially turns sentences into vectors. First you load the pre trained model and set the already trained layers to not be trainable. Then you make this pre trained model a layer in your deep learning model and train on your new data. Transfer learning has applications beyond sentiment analysis. It can be used with any pre-trained deep learning model that you have access to.
 
 ## Dataset
 
 All these Tweets and Comments were extracted using there Respective Apis Tweepy and PRAW. These tweets and Comments Were Made on Narendra Modi and Other Leaders as well as Peoples Opinion Towards the Next Prime Minister of The Nation ( In Context with General Elections Held In India - 2019). All the Tweets and Comments From twitter and Reddit are Cleaned using Pythons re and also NLP with a Sentimental Label to each ranging from -1 to 1.
 
 0 Indicating it is a Neutral Tweet/Comment\
-1 Indicating a Postive Sentiment\
+1 Indicating a Positive Sentiment\
 -1 Indicating a Negative Tweet/Comment
 
 Twitter.csv Dataset has around 163K Tweets along with Sentiment Labels.\
 Reddit.csv Dataset has around 37K Comments along with its Sentimental Label
 
-For the preprocessing, we split the sentimental label into three columns: "positive", "negative", and "neutral". The column has 1 if the original column indicates the sentiment and 0 otherwise, for example, if the original sentiment column has value -1, then for the new sentiment columns, "negative" has value 1, "neutral" and "positive" columns both has 0. Then we split the data sets into test and training sets for model development.
+For the pre-processing, we split the sentimental label into three columns: "positive", "negative", and "neutral". The column has 1 if the original column indicates the sentiment and 0 otherwise, for example, if the original sentiment column has value -1, then for the new sentiment columns, "negative" has value 1, "neutral" and "positive" columns both has 0. Then we split the data sets into test and training sets for model development.
 
 ## Pre-Trained Universal Sentence Embedder
 
