@@ -39,7 +39,7 @@ Even if a pre-trained model isn't quite accurate for your application, it saves 
 
 ## Model Development
 
-```{r}
+```{r cache=TRUE}
 library(keras)
 library(tidyverse)
 library(tidymodels)
@@ -99,5 +99,15 @@ To build our own training model, we first introduce the pre-trained model into o
 Then we added a dropout layer to prevent overfitting. The layer_global_max_pooling_1d() is used to downsample the input representation. Then we added a relu activation layer, and normalize the activations of the previous layer at each batch. After another drop out layer to prevent over fitting, our model ends with a sigmoid activation layer as the output layer.
 
 For model compilation, we use binary cross entropy as the loss function and adam as the optimizer. After training the model with training data, we evaluate the model's performance with the test data: the loss is 0.5, and the accuracy is around 0.75.\
+
+## Why It Works
+
+With transfer learning, you are using models for tasks that are related, but different. Because the tasks are related, some of the connections made by the initial model are relevant in a different but similar context. Another way of putting it is that the pretrained model narrows the "scope" of possible models making it easier for your new model to train. This is sometimes referred to as Inductive Learning. You can read more about that [here](https://machinelearningmastery.com/transfer-learning-for-deep-learning/).
+
+[![Inductive Learning Visual](https://machinelearningmastery.com/wp-content/uploads/2017/09/Depiction-of-Inductive-Transfer.png){fig-align="center"}](https://machinelearningmastery.com/transfer-learning-for-deep-learning/)
+
+## When to Use Transfer Learning
+
+Transfer learning is a powerful technique but can't always be used. For example, if you only have access to a pretrained image classifier but your task is speech recognition, it is doubtful that transfer learning would be beneficial. Transfer learning is to be used when you have access to a pretrained model that achieves a similar task, which nowadays they are easy to find hosted on websites like [TF Hub](https://tfhub.dev/). It is also useful when you have insufficient data to create your own model because the baseline model is already trained so you need less data to sufficiently train the model. It is also useful when you are short on time. Like some of realized, deep neural networks take a good deal of time to train. Utilizing pretrained models saves a bulk of the training time allowing for quicker development.
 
 ## Other Applications:
