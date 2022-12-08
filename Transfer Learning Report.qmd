@@ -94,8 +94,10 @@ evaluate(model, twitter.test.text, test.labels)
 
 For the transfer learning, we first loaded the pre-trained model weights into our base model. Then we freeze the layers of pre-trained model avoid destroying any of the information they contain during future training rounds by setting trainable = FALSE.
 
-To build our own training model, we first introduce the pre-trained model into our model, then reshaped the layer. Then we added a Long Short-Term Memory layer,
+To build our own training model, we first introduce the pre-trained model into our model, then reshaped the layer. Then we added a Bidirectional Long Short-Term Memory layer, which is the process of making any neural network o have the sequence information in both directions backwards (future to past) or forward(past to future). This comes in handy when we need to connect sentences and phrases.
 
-Then we added a dropout layer to prevent overfitting. The layer_global_max_pooling_1d() is used to downsample the input representation. Then we added a relu activation layer, and normalize the activations of the previous layer at each batch.
+Then we added a dropout layer to prevent overfitting. The layer_global_max_pooling_1d() is used to downsample the input representation. Then we added a relu activation layer, and normalize the activations of the previous layer at each batch. After another drop out layer to prevent over fitting, our model ends with a sigmoid activation layer as the output layer.
 
-\
+For model compilation, we use binary cross entropy as the loss function and adam as the optimizer. After training the model with training data, we evaluate the model's performance with the test data: the loss is 0.5, and the accuracy is around 0.75.\
+
+## Other Applications:
