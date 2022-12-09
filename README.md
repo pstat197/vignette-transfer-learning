@@ -31,3 +31,4 @@ Deep learning models can take a lot of time and resources to train, especially w
   * https://machinelearningmastery.com/transfer-learning-for-deep-learning/
   * https://www.v7labs.com/blog/transfer-learning-guide#:~:text=Transfer%20learning%20models%20achieve%20optimal,training%20neural%20networks%20from%20scratch.
     * This article provides a high level explanation of transfer learning and some deep learning models.
+  * https://research.aimultiple.com/transfer-learning/
